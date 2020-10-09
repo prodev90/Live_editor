@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>LiveEditor - Watch how your code runs in front of your eyes.</title>
+
+		<link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/editor.css">
+		<link rel="stylesheet" type="text/css" href="css/web.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="js/scripts.js"></script>
+	</head>
+
+	<body onload="createNewFile('rootFiles', 'untitled')">
+
+		<div class="wrapper">
+
+			<div id="menu">
+				<ul>
+					<li><img src="img/mac_buttons.png" alt="mac buttons"></li>
+					<li>
+						<div id="fileMenu" class="dropdown hidden">
+							<a onclick="createNewFile('rootFiles', 'untitled')">New File</a><br>
+							<a onclick="openFile()">Open</a><br>
+							<a href="">Exit</a>
+						</div>
+						<a onclick="dropdown('fileMenu', '80px')">File</a>
+					</li>
+					<li>
+						<div id="editMenu" class="dropdown hidden">
+							<a>Undo</a><br>
+							<a>Redo</a><br>
+							<a>Copy</a><br>
+							<a>Paste</a>
+						</div>
+						<a onclick="dropdown('editMenu', '120px')">Edit</a>
+					</li>
+					<li>
+						<a onclick="run()">Run</a>
+					</li>
+					<li>
+						<div id="helpMenu" class="dropdown hidden">
+							<a>GitHub</a><br>
+							<a>Twitter</a>
+						</div>
+						<a onclick="dropdown('helpMenu', '160px')">Help</a>
+					</li>
+				</ul>	
+			</div>
+
+			<div id="container" onClick="closeDropdown()">
+				<div id="tabs">
+					<ul id="openTabs">
+					</ul>
+
+					<div id="loading"><img src="img/loading.gif" alt="loading..."></div>
+				</div>
+				<div id="numbers">1</div>
+				<div id="editor"></div>
+			</div>
+			
+		</div>
+
+		<iframe src=""></iframe>
+
+
+	</body>
+</html>
